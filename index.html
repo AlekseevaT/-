@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Алексеева Татьяна Александровка — портфолио педагога · Калачинский район</title>
+<meta name="description" content="Личный сайт педагога: методические разработки, видеоуроки, достижения, работа с ОВЗ и одарёнными детьми, материалы для родителей. Калачинский район Омской области.">
+<style>
+/* ---------- ТОКЕНЫ ТЕМ ---------- */
+:root{
+  --bg:#f4f7fb; --bg-2:#eaf0fa; --card:#ffffff; --text:#0f172a; --muted:#475569;
+  --accent:#2563eb; --accent-2:#7c3aed; --accent-soft:#dbeafe; --line:#dbe3ee;
+  --shadow:0 10px 30px rgba(15,23,42,.08); --shadow-lg:0 24px 60px rgba(15,23,42,.16);
+  --radius:18px; --radius-sm:12px;
+}
+[data-theme="dark"]{
+  --bg:#0b1220; --bg-2:#0f1a2e; --card:#111c31; --text:#e6edf7; --muted:#9fb0c7;
+  --accent:#60a5fa; --accent-2:#a78bfa; --accent-soft:#1e3a8a; --line:#22304a;
+  --shadow:0 10px 30px rgba(0,0,0,.4); --shadow-lg:0 24px 60px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.65; font-size:17px;
+  transition: background .35s ease, color .35s ease;
+  background-image:
+    radial-gradient(900px 400px at 10% -10%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%),
+    radial-gradient(700px 400px at 100% 0%, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 60%);
+  background-attachment: fixed;
+}
+a{color:var(--accent); text-decoration:none; transition:color .2s}
+a:hover{text-decoration:underline}
+img{max-width:100%; display:block}
+.wrap{max-width:1180px; margin:0 auto; padding:0 20px}
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:10px; top:10px; background:var(--card); padding:10px 14px; border-radius:10px; border:2px solid var(--accent); z-index:999}
+
+/* ---------- ПРОГРЕСС ПРОКРУТКИ ---------- */
+#progress{position:fixed; top:0; left:0; height:4px; width:0; z-index:200;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2)); transition:width .1s linear}
+
+/* ---------- ШАПКА ---------- */
+header{position:relative; overflow:hidden; padding:56px 0 44px}
+header::before{
+  content:""; position:absolute; inset:-40% -10% auto -10%; height:120%;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  opacity:.12; filter:blur(60px); transform:rotate(-6deg); z-index:0;
+}
+.top{position:relative; z-index:1; display:grid; gap:28px; grid-template-columns:auto 1fr auto; align-items:center}
+.avatar{
+  width:132px; height:132px; border-radius:28px; flex:none; position:relative;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid; place-items:center; color:#fff; font-size:40px; font-weight:800; letter-spacing:1px;
+  box-shadow:var(--shadow-lg); overflow:hidden; border:4px solid color-mix(in srgb,#fff 60%, transparent);
+}
+.avatar img{width:100%; height:100%; object-fit:cover}
+.avatar::after{content:""; position:absolute; inset:0; border-radius:28px; box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); background:color-mix(in srgb,var(--accent) 12%, transparent); padding:6px 12px; border-radius:999px; margin-bottom:10px}
+h1{font-size:clamp(1.6rem,4vw,2.5rem); line-height:1.15; margin:0 0 8px; letter-spacing:-.02em}
+.role{margin:0; color:var(--muted); font-size:1.02rem}
+.contacts{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+.chip{display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; background:var(--card); border:1px solid var(--line); color:var(--text); font-size:.9rem; box-shadow:var(--shadow); transition:transform .2s, box-shadow .2s}
+.chip:hover{transform:translateY(-2px); box-shadow:var(--shadow-lg); text-decoration:none}
+.chip svg{width:16px; height:16px; flex:none; color:var(--accent)}
+
+/* кнопка темы */
+.theme-btn{width:48px; height:48px; border-radius:14px; border:1px solid var(--line); background:var(--card); color:var(--text); cursor:pointer; display:grid; place-items:center; box-shadow:var(--shadow); transition:transform .2s}
+.theme-btn:hover{transform:rotate(-8deg) scale(1.05)}
+.theme-btn svg{width:22px; height:22px}
+
+/* ---------- НАВИГАЦИЯ ---------- */
+nav{position:sticky; top:0; z-index:100; background:color-mix(in srgb, var(--card) 85%, transparent); backdrop-filter:blur(14px); border-bottom:1px solid var(--line)}
+nav .wrap{display:flex; align-items:center; gap:8px; overflow-x:auto; scrollbar-width:none; padding-top:10px; padding-bottom:10px}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{padding:8px 14px; border-radius:10px; color:var(--muted); font-size:.92rem; font-weight:600; white-space:nowrap; transition:.2s}
+nav a:hover, nav a.active{background:var(--accent-soft); color:var(--accent); text-decoration:none}
+
+/* ---------- СЕКЦИИ ---------- */
+main{padding:48px 0 64px}
+section{margin-bottom:56px; scroll-margin-top:80px}
+.section-head{display:flex; align-items:end; justify-content:space-between; gap:16px; margin-bottom:22px; flex-wrap:wrap}
+h2{font-size:clamp(1.3rem,2.6vw,1.7rem); margin:0; letter-spacing:-.01em; position:relative; padding-left:18px}
+h2::before{content:""; position:absolute; left:0; top:6px; bottom:6px; width:6px; border-radius:6px; background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+.section-sub{margin:4px 0 0 18px; color:var(--muted); font-size:.95rem}
+
+/* ---------- КАРТОЧКИ ---------- */
+.grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); transition:transform .3s, box-shadow .3s; position:relative; overflow:hidden}
+.card::before{content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); opacity:0; transition:opacity .3s}
+.card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
+.card:hover::before{opacity:1}
+.card h3{margin:0 0 10px; font-size:1.08rem}
+.muted{color:var(--muted); font-size:.95rem}
+.tag{display:inline-block; background:var(--accent-soft); color:var(--accent); border-radius:999px; padding:3px 10px; font-size:.8rem; font-weight:600; margin:2px 4px 2px 0}
+.list{margin:10px 0 0; padding-left:0; list-style:none}
+.list li{position:relative; padding-left:22px; margin-bottom:8px; font-size:.95rem}
+.list li::before{content:""; position:absolute; left:0; top:.55em; width:9px; height:9px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+
+/* ---------- СЧЁТЧИКИ ---------- */
+.stats{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); margin-top:18px}
+.stat{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; text-align:center; box-shadow:var(--shadow)}
+.stat-num{font-size:2.2rem; font-weight:800; line-height:1; background:linear-gradient(135deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.stat-label{font-size:.86rem; color:var(--muted); margin-top:6px}
+
+/* ---------- ТАЙМЛАЙН ---------- */
+.timeline{position:relative; margin-top:10px; padding-left:28px}
+.timeline::before{content:""; position:absolute; left:9px; top:6px; bottom:6px; width:3px; border-radius:3px; background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+.tl-item{position:relative; padding:0 0 22px 8px}
+.tl-item::before{content:""; position:absolute; left:-25px; top:6px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%, transparent)}
+.tl-date{font-size:.82rem; font-weight:700; color:var(--accent); letter-spacing:.04em}
+.tl-item h3{margin:2px 0 4px; font-size:1rem}
+
+/* ---------- НОВОСТИ ---------- */
+.news{display:grid; gap:16px}
+.news-item{display:grid; grid-template-columns:88px 1fr; gap:16px; padding:16px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--card); transition:.25s}
+.news-item:hover{transform:translateX(4px); box-shadow:var(--shadow)}
+.news-date{display:grid; place-items:center; text-align:center; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#fff; border-radius:12px; font-weight:800; line-height:1.1; padding:8px}
+.news-date small{font-weight:600; font-size:.7rem; opacity:.9; display:block}
+.news-item h3{margin:0 0 4px; font-size:1rem}
+
+/* ---------- ФИЛЬТР + АККОРДЕОН ---------- */
+.filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px}
+.filter-btn{border:1px solid var(--line); background:var(--card); color:var(--muted); padding:8px 14px; border-radius:999px; cursor:pointer; font:inherit; font-size:.88rem; font-weight:600; transition:.2s}
+.filter-btn:hover{border-color:var(--accent); color:var(--accent)}
+.filter-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#fff; border-color:transparent}
+.acc-item{border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--card); margin-bottom:10px; overflow:hidden}
+.acc-btn{width:100%; text-align:left; background:none; border:0; padding:16px 18px; font:inherit; font-weight:700; color:var(--text); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px}
+.acc-btn svg{transition:transform .3s; flex:none; color:var(--accent)}
+.acc-item.open .acc-btn svg{transform:rotate(180deg)}
+.acc-panel{max-height:0; overflow:hidden; transition:max-height .35s ease; padding:0 18px}
+.acc-item.open .acc-panel{padding-bottom:16px}
+.acc-panel p, .acc-panel ul{margin:0 0 8px}
+
+/* ---------- ГАЛЕРЕЯ ---------- */
+.gallery{display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.gallery button{border:0; padding:0; border-radius:14px; overflow:hidden; cursor:pointer; aspect-ratio:4/3; background:linear-gradient(135deg,var(--accent-soft),color-mix(in srgb,var(--accent-2) 20%, transparent)); position:relative; transition:transform .25s}
+.gallery button:hover{transform:scale(1.03)}
+.gallery button span{position:absolute; inset:auto 0 0 0; padding:8px 10px; background:linear-gradient(0deg,rgba(0,0,0,.6),transparent); color:#fff; font-size:.82rem; text-align:left}
+
+/* ---------- ВИДЕО ---------- */
+.video{position:relative; padding-top:56.25%; background:#0b1220; border-radius:14px; overflow:hidden; box-shadow:var(--shadow)}
+.video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+
+/* ---------- ФОРМА ---------- */
+form{display:grid; gap:14px}
+label{font-weight:600; font-size:.9rem}
+input,textarea,select{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:12px; font:inherit; background:var(--bg-2); color:var(--text); transition:.2s}
+input:focus,textarea:focus,select:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%, transparent); background:var(--card)}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#fff; padding:12px 22px; border-radius:12px; font-weight:700; border:0; cursor:pointer; font:inherit; box-shadow:var(--shadow); transition:transform .2s, box-shadow .2s}
+.btn:hover{transform:translateY(-2px); box-shadow:var(--shadow-lg); text-decoration:none}
+.btn-ghost{background:var(--card); color:var(--accent); border:1.5px solid var(--accent); box-shadow:none}
+
+/* ---------- МОДАЛКА ---------- */
+.modal{position:fixed; inset:0; background:rgba(2,6,23,.75); backdrop-filter:blur(6px); display:none; place-items:center; z-index:300; padding:20px}
+.modal.open{display:grid; animation:fade .25s ease}
+.modal img{max-width:min(900px,100%); max-height:85vh; border-radius:16px; box-shadow:var(--shadow-lg)}
+@keyframes fade{from{opacity:0} to{opacity:1}}
+
+/* ---------- АНИМАЦИЯ ПОЯВЛЕНИЯ ---------- */
+.reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease}
+.reveal.in{opacity:1; transform:none}
+
+/* ---------- ФУТЕР ---------- */
+footer{background:linear-gradient(135deg,#0b1220,#111c31); color:#c7d2e3; padding:36px 0; font-size:.92rem}
+footer a{color:#93c5fd}
+footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center}
+
+/* ---------- МОБИЛЬНОЕ ---------- */
+@media (max-width:820px){
+  .top{grid-template-columns:1fr; text-align:left}
+  .avatar{width:104px;height:104px;font-size:32px;border-radius:22px}
+  .news-item{grid-template-columns:1fr}
+  .news-date{width:88px}
+}
+@media (max-width:600px){ body{font-size:16px} header{padding:36px 0 28px} }
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important; transition-duration:.001ms !important}
+  .reveal{opacity:1; transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Перейти к содержимому</a>
+
+<!-- ================= ШАПКА ================= -->
+<header id="top">
+  <div class="wrap top">
+    <div class="avatar" aria-hidden="true">
+      <!-- Замените на своё фото: <img src="photo.jpg" alt=""> -->
+      ИО
+    </div>
+    <div>
+      <span class="eyebrow">Педагог года — 2027 · муниципальный этап</span>
+      <h1>Алексеева Татьяна Александровка</h1>
+      <p class="role">Учитель начальных классов · МБОУ «Гимназия» им. А.Г. Артемьевой, г. Калачинск, Омская область</p>
+      <div class="contacts">
+        <a class="chip" href="mailto:ivanova@example.ru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>ivanova@example.ru</a>
+        <a class="chip" href="tel:+79000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .6 3 .7a2 2 0 0 1 1.6 2Z"/></svg>+7 (900) 000-00-00</a>
+        <a class="chip" href="https://vk.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.2 18c-5.6 0-8.8-3.8-9-10.2h2.8c.1 4.7 2.2 6.7 3.9 7.1V7.8h2.7v4.1c1.6-.2 3.3-2 3.9-4.1h2.7c-.4 2.6-2.3 4.4-3.6 5.1 1.3.6 3.4 2.2 4.2 5.1h-3c-.6-1.9-2.2-3.4-4.2-3.6V18h-.4Z"/></svg>Блог педагога</a>
+      </div>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Переключить тему" title="Светлая / тёмная тема">
+      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ================= НАВИГАЦИЯ ================= -->
+<nav aria-label="Основная навигация">
+  <div class="wrap">
+    <a href="#about">Обо мне</a>
+    <a href="#news">Новости</a>
+    <a href="#method">Методичка</a>
+    <a href="#video">Видео</a>
+    <a href="#achievements">Достижения</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#special">ОВЗ и одарённые</a>
+    <a href="#distance">Дистант</a>
+    <a href="#parents">Родителям</a>
+    <a href="#contacts">Контакты</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <!-- ============ ОБО МНЕ + СТАТИСТИКА ============ -->
+  <section id="about" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Обо мне</h2>
+        <p class="section-sub">Педагогическое кредо, образование и профессиональный путь</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Педагогическое кредо</h3>
+        <p class="muted">«Не наполнить сосуд, а зажечь огонь». Работаю в системе развивающего обучения, опираюсь на деятельностный подход и формирующее оценивание.</p>
+        <div>
+          <span class="tag">Деятельностный подход</span>
+          <span class="tag">Формирующее оценивание</span>
+          <span class="tag">Проектная деятельность</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Образование и стаж</h3>
+        <ul class="list">
+          <li>Омский государственный педагогический университет, 2012</li>
+          <li>Стаж педагогической работы — 12 лет</li>
+          <li>Высшая квалификационная категория</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Повышение квалификации</h3>
+        <ul class="list">
+          <li>«Формирующее оценивание в начальной школе», 2025</li>
+          <li>«Работа с обучающимися с ОВЗ в условиях ФГОС», 2024</li>
+          <li>«Цифровые образовательные ресурсы», 2026</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-num" data-count="12">0</div><div class="stat-label">лет педагогического стажа</div></div>
+      <div class="stat"><div class="stat-num" data-count="87">0</div><div class="stat-label">выпускников</div></div>
+      <div class="stat"><div class="stat-num" data-count="14">0</div><div class="stat-label">призёров олимпиад</div></div>
+      <div class="stat"><div class="stat-num" data-count="23">0</div><div class="stat-label">методических публикаций</div></div>
+    </div>
+  </section>
+
+  <!-- ============ НОВОСТИ ============ -->
+  <section id="news" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Новости и анонсы</h2>
+        <p class="section-sub">Лента обновляется еженедельно</p>
+      </div>
+      <a class="btn btn-ghost" href="#contacts">Подписаться</a>
+    </div>
+    <div class="news">
+      <article class="news-item">
+        <div class="news-date">17<small>ноя 2026</small></div>
+        <div>
+          <h3>Открытый урок по окружающему миру</h3>
+          <p class="muted">3 «А» класс, тема «Природные зоны Омского Прииртышья». Приглашаются коллеги и родители.</p>
+          <span class="tag">Открытый урок</span><span class="tag">3 класс</span>
+        </div>
+      </article>
+      <article class="news-item">
+        <div class="news-date">10<small>ноя 2026</small></div>
+        <div>
+          <h3>Анонс: вебинар для родителей</h3>
+          <p class="muted">«Как помочь ребёнку с домашним заданием без конфликтов» — 24 ноября, 18:00, онлайн.</p>
+          <span class="tag">Вебинар</span><span class="tag">Родителям</span>
+        </div>
+      </article>
+      <article class="news-item">
+        <div class="news-date">03<small>ноя 2026</small></div>
+        <div>
+          <h3>Итоги школьного этапа олимпиады</h3>
+          <p class="muted">Трое обучающихся стали призёрами по русскому языку и математике. Поздравляем!</p>
+          <span class="tag">Олимпиада</span><span class="tag">Достижения</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ МЕТОДИЧКА: ФИЛЬТР + АККОРДЕОН ============ -->
+  <section id="method" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Методическая копилка</h2>
+        <p class="section-sub">Рабочие программы, оценочные материалы, авторские разработки</p>
+      </div>
+    </div>
+
+    <div class="filters" role="tablist" aria-label="Фильтр материалов">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="program">Программы</button>
+      <button class="filter-btn" data-filter="assess">Оценивание</button>
+      <button class="filter-btn" data-filter="author">Авторские</button>
+    </div>
+
+    <div id="acc">
+      <div class="acc-item open" data-cat="program">
+        <button class="acc-btn" aria-expanded="true">Рабочие программы <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="acc-panel">
+          <ul class="list">
+            <li><a href="#">Русский язык, 1–4 класс (PDF)</a></li>
+            <li><a href="#">Математика, 1–4 класс (PDF)</a></li>
+            <li><a href="#">Окружающий мир, 1–4 класс (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="acc-item" data-cat="assess">
+        <button class="acc-btn" aria-expanded="false">Оценочные материалы <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="acc-panel">
+          <ul class="list">
+            <li><a href="#">Диагностические работы по математике</a></li>
+            <li><a href="#">Листы самооценки и рефлексии</a></li>
+            <li><a href="#">Критериальное оценивание проектов</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="acc-item" data-cat="author">
+        <button class="acc-btn" aria-expanded="false">Авторские разработки <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="acc-panel">
+          <ul class="list">
+            <li><a href="#">Технологическая карта урока «Природные зоны»</a></li>
+            <li><a href="#">Сборник заданий «Учусь учиться»</a></li>
+            <li><a href="#">Методика «Портфолио достижений младшего школьника»</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="acc-item" data-cat="author">
+        <button class="acc-btn" aria-expanded="false">Публикации и выступления <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="acc-panel">
+          <ul class="list">
+            <li>Сборник региональной конференции, 2026</li>
+            <li>Доклад на августовском педсовете, 2026</li>
+            <li>Мастер-класс для молодых педагогов, 2025</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ВИДЕО ============ -->
+  <section id="video" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Видеоматериалы и вебинары</h2>
+        <p class="section-sub">Фрагменты уроков и записи выступлений</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Фрагмент урока</h3>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Фрагмент урока" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Запись вебинара для коллег</h3>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Вебинар" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ДОСТИЖЕНИЯ: ТАЙМЛАЙН ============ -->
+  <section id="achievements" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Достижения</h2>
+        <p class="section-sub">Профессиональный путь и успехи обучающихся</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Мои достижения</h3>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-date">2026</div><h3>Публикация в региональном сборнике</h3><p class="muted">Статья «Формирующее оценивание в начальной школе».</p></div>
+          <div class="tl-item"><div class="tl-date">2025</div><h3>Победитель муниципального этапа «Учитель года»</h3><p class="muted">Представление опыта на региональном уровне.</p></div>
+          <div class="tl-item"><div class="tl-date">2024</div><h3>Грамота Комитета по образованию</h3><p class="muted">За высокие результаты в обучении и воспитании.</p></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Достижения обучающихся</h3>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-date">2026</div><h3>Призёры муниципальной олимпиады</h3><p class="muted">Русский язык — 2 призёра.</p></div>
+          <div class="tl-item"><div class="tl-date">2025</div><h3>Победители конкурса проектов</h3><p class="muted">«Моя малая родина».</p></div>
+          <div class="tl-item"><div class="tl-date">2026</div><h3>Участники регионального фестиваля</h3><p class="muted">«Юные таланты».</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ГАЛЕРЕЯ ============ -->
+  <section id="gallery" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Галерея</h2>
+        <p class="section-sub">Моменты уроков, проектов и мероприятий</p>
+      </div>
+    </div>
+    <div class="gallery">
+      <button data-src="https://picsum.photos/seed/1/1200/800"><span>Открытый урок</span></button>
+      <button data-src="https://picsum.photos/seed/2/1200/800"><span>Проектная защита</span></button>
+      <button data-src="https://picsum.photos/seed/3/1200/800"><span>Экскурсия</span></button>
+      <button data-src="https://picsum.photos/seed/4/1200/800"><span>Конкурс чтецов</span></button>
+      <button data-src="https://picsum.photos/seed/5/1200/800"><span>Мастер-класс</span></button>
+      <button data-src="https://picsum.photos/seed/6/1200/800"><span>Родительское собрание</span></button>
+    </div>
+  </section>
+
+  <!-- ============ ОВЗ И ОДАРЁННЫЕ ============ -->
+  <section id="special" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Обучающиеся с особыми потребностями</h2>
+        <p class="section-sub">ОВЗ, одарённость, русский язык как неродной</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Обучающиеся с ОВЗ</h3>
+        <p class="muted">Адаптированные программы, индивидуальные маршруты, дидактические материалы с учётом особенностей восприятия.</p>
+        <ul class="list">
+          <li><a href="#">Адаптированная рабочая программа (вариант 7.1)</a></li>
+          <li><a href="#">Карточки с укрупнённым шрифтом</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Одарённые обучающиеся</h3>
+        <p class="muted">Программы сопровождения, проектная и исследовательская деятельность, подготовка к олимпиадам.</p>
+        <ul class="list">
+          <li><a href="#">План работы с одарёнными детьми</a></li>
+          <li><a href="#">Задания повышенной сложности</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Русский язык как неродной</h3>
+        <p class="muted">Словари, схемы, опоры, упражнения для обучающихся с неродным русским языком.</p>
+        <ul class="list">
+          <li><a href="#">Комплект опорных схем</a></li>
+          <li><a href="#">Двуязычный словарик терминов</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ДИСТАНТ ============ -->
+  <section id="distance" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Электронное и дистанционное обучение</h2>
+        <p class="section-sub">Материалы и инструменты для онлайн-обучения</p>
+      </div>
+    </div>
+    <div class="card">
+      <ul class="list">
+        <li><a href="#">Платформа для онлайн-занятий</a></li>
+        <li><a href="#">Инструкция для обучающихся и родителей</a></li>
+        <li><a href="#">Комплект заданий для самостоятельной работы</a></li>
+        <li><a href="#">Цифровые образовательные ресурсы (ЦОР)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ РОДИТЕЛЯМ ============ -->
+  <section id="parents" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Родителям</h2>
+        <p class="section-sub">Памятки и полезные ссылки</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Полезная информация</h3>
+        <ul class="list">
+          <li><a href="#">Памятка «Режим дня младшего школьника»</a></li>
+          <li><a href="#">Как помочь с домашним заданием</a></li>
+          <li><a href="#">Материалы родительского собрания</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Полезные ссылки</h3>
+        <ul class="list">
+          <li><a href="https://edu.gov.ru" target="_blank" rel="noopener">Минпросвещения России</a></li>
+          <li><a href="https://obr-omsk.ru" target="_blank" rel="noopener">Минобразования Омской области</a></li>
+          <li><a href="https://vk.com" target="_blank" rel="noopener">Школьная группа ВКонтакте</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ КОНТАКТЫ ============ -->
+  <section id="contacts" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Контакты и обратная связь</h2>
+        <p class="section-sub">Отвечаю в течение 1–2 рабочих дней</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Связаться со мной</h3>
+        <ul class="list">
+          <li>E-mail: <a href="mailto:ivanova@example.ru">ivanova@example.ru</a></li>
+          <li>Телефон: <a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+          <li>Мессенджер: <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Форма обратной связи</h3>
+        <form action="https://formspree.io/f/ВАШ_ID" method="POST">
+          <div><label for="name">Имя</label><input id="name" name="name" required autocomplete="name"></div>
+          <div><label for="email">E-mail</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div><label for="role">Кто вы</label>
+            <select id="role" name="role"><option>Родитель</option><option>Коллега</option><option>Обучающийся</option></select>
+          </div>
+          <div><label for="msg">Сообщение</label><textarea id="msg" name="message" rows="4" required></textarea></div>
+          <button class="btn" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Алексеева Татьяна Александровка · Личный сайт педагога. Материалы публикуются с соблюдением правовых и этических норм.</div>
+    <div>Калачинский район Омской области · <a href="#top">Наверх ↑</a></div>
+  </div>
+</footer>
+
+<!-- ================= МОДАЛКА ================= -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Просмотр изображения">
+  <img id="modalImg" alt="">
+</div>
+
+<script>
+/* ---------- ТЕМА ---------- */
+(function(){
+  const btn=document.getElementById('themeBtn'), icon=document.getElementById('themeIcon');
+  const saved=localStorage.getItem('theme');
+  if(saved) document.documentElement.dataset.theme=saved;
+  const sun='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+  const moon='<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>';
+  function paint(){icon.innerHTML=document.documentElement.dataset.theme==='dark'?moon:sun;}
+  paint();
+  btn.addEventListener('click',()=>{
+    const t=document.documentElement.dataset.theme==='dark'?'light':'dark';
+    document.documentElement.dataset.theme=t; localStorage.setItem('theme',t); paint();
+  });
+})();
+
+/* ---------- ПРОГРЕСС ---------- */
+const progress=document.getElementById('progress');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  progress.style.width=p+'%';
+},{passive:true});
+
+/* ---------- REVEAL ---------- */
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- СЧЁТЧИКИ ---------- */
+const counters=document.querySelectorAll('[data-count]');
+const cio=new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el=e.target, target=+el.dataset.count; let cur=0; const step=Math.max(1,Math.round(target/40));
+    const t=setInterval(()=>{ cur+=step; if(cur>=target){cur=target; clearInterval(t);} el.textContent=cur; },35);
+    cio.unobserve(el);
+  });
+},{threshold:.5});
+counters.forEach(c=>cio.observe(c));
+
+/* ---------- АКТИВНАЯ НАВИГАЦИЯ ---------- */
+const navLinks=[...document.querySelectorAll('nav a')];
+const sections=[...document.querySelectorAll('main section')];
+addEventListener('scroll',()=>{
+  let id='';
+  sections.forEach(s=>{ if(scrollY>=s.offsetTop-120) id=s.id; });
+  navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+},{passive:true});
+
+/* ---------- ФИЛЬТР + АККОРДЕОН ---------- */
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.acc-item').forEach(item=>{
+      item.style.display=(f==='all'||item.dataset.cat===f)?'':'none';
+    });
+  });
+});
+document.querySelectorAll('.acc-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.acc-item');
+    const panel=item.querySelector('.acc-panel');
+    const open=item.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    panel.style.maxHeight=open?panel.scrollHeight+'px':'0';
+  });
+});
+/* раскрыть изначально открытый */
+document.querySelectorAll('.acc-item.open .acc-panel').forEach(p=>p.style.maxHeight=p.scrollHeight+'px');
+
+/* ---------- ГАЛЕРЕЯ / МОДАЛКА ---------- */
+const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg');
+document.querySelectorAll('.gallery button').forEach(b=>{
+  b.addEventListener('click',()=>{ modalImg.src=b.dataset.src; modal.classList.add('open'); });
+});
+modal.addEventListener('click',()=>modal.classList.remove('open'));
+addEventListener('keydown',e=>{ if(e.key==='Escape') modal.classList.remove('open'); });
+</script>
+</body>
+</html>
