@@ -118,11 +118,19 @@ h2::before{content:""; position:absolute; left:0; top:6px; bottom:6px; width:6px
 .news-date{display:grid; place-items:center; text-align:center; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#fff; border-radius:12px; font-weight:800; line-height:1.1; padding:8px; height: fit-content;}
 .news-date small{font-weight:600; font-size:.7rem; opacity:.9; display:block}
 .news-item h3{margin:0 0 4px; font-size:1.2rem;}
-.news-content {display:grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;}
+
+/* Обновленная структура новости */
 .news-text p {margin-top: 0; margin-bottom: 12px; font-size: 0.95rem; text-align: justify;}
-.news-gallery {display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;}
-.news-gallery img {width: 100%; height: 100px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: transform 0.2s;}
-.news-gallery img:hover {transform: scale(1.05);}
+
+/* Галерея в новости на всю ширину (3 колонки) */
+.news-gallery {display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; margin-bottom: 8px;}
+.news-gallery img {width: 100%; height: 180px; object-fit: cover; border-radius: 10px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;}
+.news-gallery img:hover {transform: scale(1.02); box-shadow: var(--shadow);}
+
+/* Обертка для одной большой картинки в новости */
+.news-single-img {margin-top: 16px; margin-bottom: 8px;}
+.news-single-img img {width: 100%; max-height: 450px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: transform 0.2s;}
+.news-single-img img:hover {transform: scale(1.01);}
 
 /* ---------- ФИЛЬТР + АККОРДЕОН ---------- */
 .filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px}
@@ -177,9 +185,14 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
   .avatar{width:104px;height:104px;font-size:32px;border-radius:22px}
   .news-item{grid-template-columns:1fr}
   .news-date{width:88px; justify-self: start;}
-  .news-content {grid-template-columns: 1fr;}
+  .news-gallery {grid-template-columns: repeat(2, 1fr);}
 }
-@media (max-width:600px){ body{font-size:16px} header{padding:36px 0 28px} }
+@media (max-width:600px){ 
+  body{font-size:16px} 
+  header{padding:36px 0 28px} 
+  .news-gallery {grid-template-columns: 1fr;}
+  .news-gallery img {height: auto;}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms !important; transition-duration:.001ms !important}
@@ -288,7 +301,31 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
     </div>
     <div class="news">
       
-      <!-- НОВАЯ СТАТЬЯ -->
+      <!-- СТАТЬЯ: ГОЛОСА ИСТОРИИ -->
+      <article class="news-item" style="grid-template-columns: 1fr;">
+        <div style="display:flex; gap: 16px; align-items: start; margin-bottom: 12px;">
+            <div class="news-date">20<small>ноя 2026</small></div>
+            <div>
+                <h3>«Голоса истории»</h3>
+                <span class="tag">Музей</span><span class="tag">Исследование</span>
+            </div>
+        </div>
+        <div class="news-content">
+            <div class="news-text">
+                <p>Недавно активисты школьного музея совершили поездку в деревню Стеклянка — место с богатой и живой историей. Для ребят это стало настоящим путешествием во времени: они не просто увидели знакомые по рассказам места, а прикоснулись к памяти поколений.</p>
+                <p>Главной целью поездки было собрать живые свидетельства прошлого — услышать рассказы старожилов деревни, сохранить их воспоминания для школьного архива и будущих экспозиций. И эта цель полностью оправдалась.</p>
+                <p>Особую ценность встрече придал разговор с Петром Петровичем Келлером — одним из тех, кто знает Стеклянку до мельчайших деталей, помнит её традиции и людей. Его рассказы наполнили сухие факты теплом и личным отношением: он делился историями о быте деревенских жителей, о труде и праздниках, о переменах, которые деревня переживала в разные годы. Ребята слушали, не пропуская ни слова, и старательно записывали каждую деталь — ведь именно такие воспоминания становятся настоящей летописью малой родины.</p>
+                <p>Для музейного актива эта поездка — не просто экскурсия, а важная исследовательская работа. Теперь в фондах появятся новые свидетельства: голоса тех, кто своими глазами видел, как менялась Стеклянка, как жили и трудились её жители. Эти рассказы станут частью будущих выставок и уроков, помогут другим школьникам почувствовать связь времён и понять, насколько ценен опыт старшего поколения.</p>
+                <p>Поездка в Стеклянку ещё раз показала: история живёт не только в учебниках и документах, но и в памяти людей. А задача юных хранителей истории — бережно собирать и передавать эти знания дальше.</p>
+            </div>
+            <div class="news-single-img">
+                <img src="news1/7.jpg" alt="Встреча со старожилами в Стеклянке" onclick="openModal('news1/7.jpg')">
+            </div>
+        </div>
+      </article>
+      <!-- КОНЕЦ СТАТЬИ -->
+
+      <!-- СТАТЬЯ: МОСТ ДРУЖБЫ -->
       <article class="news-item" style="grid-template-columns: 1fr;">
         <div style="display:flex; gap: 16px; align-items: start; margin-bottom: 12px;">
             <div class="news-date">19<small>ноя 2026</small></div>
@@ -315,7 +352,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
             </div>
         </div>
       </article>
-      <!-- КОНЕЦ НОВОЙ СТАТЬИ -->
+      <!-- КОНЕЦ СТАТЬИ -->
 
       <article class="news-item">
         <div class="news-date">17<small>ноя 2026</small></div>
@@ -670,7 +707,7 @@ document.querySelectorAll('.acc-btn').forEach(btn=>{
 /* раскрыть изначально открытый */
 document.querySelectorAll('.acc-item.open .acc-panel').forEach(p=>p.style.maxHeight=p.scrollHeight+'px');
 
-/* ---------- ГАЛЕРЕЯ / МОДАЛКА (обновлено для работы с новостями) ---------- */
+/* ---------- ГАЛЕРЕЯ / МОДАЛКА ---------- */
 const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg');
 
 // Для кнопок галереи внизу
@@ -678,7 +715,7 @@ document.querySelectorAll('.gallery button').forEach(b=>{
   b.addEventListener('click',()=>{ modalImg.src=b.dataset.src; modal.classList.add('open'); });
 });
 
-// Для картинок внутри новости
+// Функция для картинок внутри новостей
 function openModal(src) {
   modalImg.src = src;
   modal.classList.add('open');
