@@ -164,7 +164,7 @@ h2::before{content:""; position:absolute; left:0; top:5px; bottom:5px; width:5px
 .gallery{display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
 .gallery button{display:block; width:100%; border:0; padding:0; border-radius:16px; overflow:hidden; cursor:pointer; aspect-ratio:4/3; background:linear-gradient(135deg,var(--accent-soft),color-mix(in srgb,var(--accent-2) 20%, transparent)); position:relative; transition:transform .25s,box-shadow .25s}
 .gallery button:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg)}
-.gallery button img{width:100%; height:100%; object-fit:cover}
+.gallery button img{width:100%; height:100%; object-fit:contain; background:var(--bg-2)}
 .gallery button span{position:absolute; inset:auto 0 0 0; padding:24px 12px 10px; background:linear-gradient(0deg,rgba(9,17,37,.78),transparent); color:#fff; font-size:.86rem; font-weight:650; text-align:left}
 .action-card{display:flex; flex-direction:column; gap:12px}
 .action-art{height:126px; display:grid; place-items:center; overflow:hidden; border-radius:14px; background:linear-gradient(135deg,var(--accent-soft),color-mix(in srgb,var(--accent-2) 22%,var(--bg-2))); color:var(--accent); font-size:3rem; font-weight:800}
@@ -855,6 +855,33 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
       <button data-src="photo/gallery-project.jpg"><img src="photo/gallery-project.jpg" alt="Школьный проект о военной истории" loading="lazy"><span>Акция «Блокадный хлеб»</span></button>
       <button data-src="photo/gallery-garden-of-victory.jpg"><img src="photo/gallery-garden-of-victory.jpg" alt="Участие школьников в акции «Сад Победы»" loading="lazy"><span>Сад Победы</span></button>
       <button data-src="photo/gallery-candle-of-memory.jpg"><img src="photo/gallery-candle-of-memory.jpg" alt="Памятная акция ко Дню неизвестного солдата" loading="lazy"><span>Свеча памяти</span></button>
+      <button data-src="photo/gallery-2026/yunarmiya-award.jpg"><img src="photo/gallery-2026/yunarmiya-award.jpg" alt="Участник «Юнармии» с дипломом конкурса «Герои снежных рубежей»" loading="lazy"><span>«Герои снежных рубежей»</span></button>
+      <button data-src="photo/gallery-2026/community-cleanup-1.jpg"><img src="photo/gallery-2026/community-cleanup-1.jpg" alt="Школьники участвуют в уборке территории" loading="lazy"><span>Добрые дела вместе</span></button>
+      <button data-src="photo/gallery-2026/community-cleanup-2.jpg"><img src="photo/gallery-2026/community-cleanup-2.jpg" alt="Ребята собирают опавшую листву во время уборки" loading="lazy"><span>На субботнике</span></button>
+      <button data-src="photo/gallery-2026/school-event-group.jpg"><img src="photo/gallery-2026/school-event-group.jpg" alt="Школьники собрались на праздничное мероприятие" loading="lazy"><span>Школьная жизнь</span></button>
+      <button data-src="photo/gallery-2026/interactive-lesson.jpg"><img src="photo/gallery-2026/interactive-lesson.jpg" alt="Ученица показывает интерактивное задание о Галине Улановой" loading="lazy"><span>Интерактивный урок</span></button>
+      <button data-src="photo/gallery-2026/meeting-generations.jpg"><img src="photo/gallery-2026/meeting-generations.jpg" alt="Школьники в гостях у жительницы села" loading="lazy"><span>Встреча поколений</span></button>
+      <button data-src="photo/gallery-2026/community-cleanup-3.jpg"><img src="photo/gallery-2026/community-cleanup-3.jpg" alt="Ребята после уборки территории в родном селе" loading="lazy"><span>Волонтёрская помощь</span></button>
+      <button data-src="photo/gallery-2026/local-history-study.jpg"><img src="photo/gallery-2026/local-history-study.jpg" alt="Ученик изучает архивные материалы и фотографии" loading="lazy"><span>Исследуем историю края</span></button>
+      <button data-src="photo/gallery-2026/museum-excursion.jpg"><img src="photo/gallery-2026/museum-excursion.jpg" alt="Школьники знакомятся с экспозицией музея военной истории" loading="lazy"><span>В музее Боевой славы</span></button>
+      <button data-src="photo/gallery-2026/yunarmiya-library-1.jpg"><img src="photo/gallery-2026/yunarmiya-library-1.jpg" alt="Участники «Юнармии» в школьной библиотеке" loading="lazy"><span>Юнармейская встреча</span></button>
+      <button data-src="photo/gallery-2026/german-class-1.jpg"><img src="photo/gallery-2026/german-class-1.jpg" alt="Ученики на уроке немецкого языка с масками персонажей" loading="lazy"><span>Урок немецкого языка</span></button>
+      <button data-src="photo/gallery-2026/memorial-group.jpg"><img src="photo/gallery-2026/memorial-group.jpg" alt="Школьники на памятном мероприятии" loading="lazy"><span>Память и уважение</span></button>
+      <button data-src="photo/gallery-2026/civil-defense-corner.jpg"><img src="photo/gallery-2026/civil-defense-corner.jpg" alt="Ученики изучают материалы школьного уголка гражданской защиты" loading="lazy"><span>Уголок гражданской защиты</span></button>
+      <button data-src="photo/gallery-2026/city-excursion.jpg"><img src="photo/gallery-2026/city-excursion.jpg" alt="Экскурсия по историческому центру города" loading="lazy"><span>На экскурсии</span></button>
+      <button data-src="photo/gallery-2026/victory-garden-1.jpg"><img src="photo/gallery-2026/victory-garden-1.jpg" alt="Школьники высаживают цветы у мемориала" loading="lazy"><span>Сад Победы</span></button>
+      <button data-src="photo/gallery-2026/local-history-newspaper-1.jpg"><img src="photo/gallery-2026/local-history-newspaper-1.jpg" alt="Материалы районной газеты о жителях и истории села" loading="lazy"><span>Страницы истории родного края</span></button>
+      <button data-src="photo/gallery-2026/afghanistan-memory.jpg"><img src="photo/gallery-2026/afghanistan-memory.jpg" alt="Памятная композиция «Дорогами Афганистана»" loading="lazy"><span>Дорогами Афганистана</span></button>
+      <button data-src="photo/gallery-2026/snow-frontiers-memorial.jpg"><img src="photo/gallery-2026/snow-frontiers-memorial.jpg" alt="Школьники у выставки «Герои снежных рубежей»" loading="lazy"><span>Герои снежных рубежей</span></button>
+      <button data-src="photo/gallery-2026/local-history-newspaper-2.jpg"><img src="photo/gallery-2026/local-history-newspaper-2.jpg" alt="Газетная статья о Стеклянке и её жителях" loading="lazy"><span>История села в газетных материалах</span></button>
+      <button data-src="photo/gallery-2026/german-class-2.jpg"><img src="photo/gallery-2026/german-class-2.jpg" alt="Ученики представляют сценку на уроке немецкого языка" loading="lazy"><span>Немецкий язык — с интересом</span></button>
+      <button data-src="photo/gallery-2026/may-day-school-team.jpg"><img src="photo/gallery-2026/may-day-school-team.jpg" alt="Педагоги школы на мероприятии к Первому мая" loading="lazy"><span>Праздник труда</span></button>
+      <button data-src="photo/gallery-2026/victory-parade.jpg"><img src="photo/gallery-2026/victory-parade.jpg" alt="Школьники несут флаги у мемориала в День Победы" loading="lazy"><span>Память о подвиге</span></button>
+      <button data-src="photo/gallery-2026/victory-flowers-1.jpg"><img src="photo/gallery-2026/victory-flowers-1.jpg" alt="Дети возлагают цветы к памятнику" loading="lazy"><span>Цветы у мемориала</span></button>
+      <button data-src="photo/gallery-2026/victory-garden-2.jpg"><img src="photo/gallery-2026/victory-garden-2.jpg" alt="Ученики и педагоги ухаживают за цветником у памятника" loading="lazy"><span>Забота о памятном месте</span></button>
+      <button data-src="photo/gallery-2026/memorial-guard.jpg"><img src="photo/gallery-2026/memorial-guard.jpg" alt="Школьники несут почётный караул у мемориала" loading="lazy"><span>У памятника героям</span></button>
+      <button data-src="photo/gallery-2026/yunarmiya-library-2.jpg"><img src="photo/gallery-2026/yunarmiya-library-2.jpg" alt="Участники «Юнармии» в библиотеке" loading="lazy"><span>Встреча в библиотеке</span></button>
+      <button data-src="photo/gallery-2026/snow-frontiers-diploma.jpg"><img src="photo/gallery-2026/snow-frontiers-diploma.jpg" alt="Участник конкурса «Герои снежных рубежей» с дипломом" loading="lazy"><span>Диплом победителя</span></button>
     </div>
   </section>
 
