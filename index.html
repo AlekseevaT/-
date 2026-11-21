@@ -61,6 +61,7 @@ header::before{
 .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); background:color-mix(in srgb,var(--accent) 12%, transparent); padding:6px 12px; border-radius:999px; margin-bottom:10px}
 h1{font-size:clamp(1.6rem,4vw,2.5rem); line-height:1.15; margin:0 0 8px; letter-spacing:-.02em}
 .role{margin:0; color:var(--muted); font-size:1.02rem}
+.education-note{display:inline-block; margin-top:5px; color:var(--accent); font-size:.92rem; font-weight:650}
 
 /* кнопка темы */
 .theme-btn{width:48px; height:48px; border-radius:14px; border:1px solid var(--line); background:var(--card); color:var(--text); cursor:pointer; display:grid; place-items:center; box-shadow:var(--shadow); transition:transform .2s}
@@ -165,6 +166,10 @@ h2::before{content:""; position:absolute; left:0; top:5px; bottom:5px; width:5px
 .gallery button:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg)}
 .gallery button img{width:100%; height:100%; object-fit:cover}
 .gallery button span{position:absolute; inset:auto 0 0 0; padding:24px 12px 10px; background:linear-gradient(0deg,rgba(9,17,37,.78),transparent); color:#fff; font-size:.86rem; font-weight:650; text-align:left}
+.action-card{display:flex; flex-direction:column; gap:12px}
+.action-art{height:126px; display:grid; place-items:center; overflow:hidden; border-radius:14px; background:linear-gradient(135deg,var(--accent-soft),color-mix(in srgb,var(--accent-2) 22%,var(--bg-2))); color:var(--accent); font-size:3rem; font-weight:800}
+.action-art.ribbon{position:relative}
+.action-art.ribbon::before{content:""; width:35px; height:100px; background:linear-gradient(90deg,#b32635 0 34%,#f4f4f2 34% 66%,#315aae 66%); transform:rotate(32deg); border-radius:5px; box-shadow:0 5px 16px rgba(15,23,42,.16)}
 
 /* ---------- ВИДЕО ---------- */
 .video{position:relative; padding-top:56.25%; background:#0b1220; border-radius:14px; overflow:hidden; box-shadow:var(--shadow)}
@@ -262,7 +267,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
     </div>
     <div>
       <h1>Алексеева Татьяна Александровна</h1>
-      <p class="role">Учитель иностранного языка и истории · БОУ «Репинская СОШ»</p>
+      <p class="role">Учитель иностранного языка и истории · БОУ «Репинская СОШ»<br><span class="education-note">Выпускница Омского педагогического университета</span></p>
     </div>
     <button class="theme-btn" id="themeBtn" aria-label="Переключить тему" title="Светлая / тёмная тема">
       <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -276,9 +281,13 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
     <a href="#about">Обо мне</a>
     <a href="#news">Новости</a>
     <a href="#method">Методичка</a>
+    <a href="#parents">Родителям</a>
+    <a href="#students">Ученикам</a>
+    <a href="#useful">Полезные ссылки</a>
     <a href="#video">Видео</a>
     <a href="#achievements">Достижения и грамоты</a>
     <a href="#projects">Проекты и краеведение</a>
+    <a href="#actions">Акции</a>
     <a href="#gallery">Галерея</a>
   </div>
 </nav>
@@ -511,6 +520,118 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
     </div>
   </section>
 
+  <!-- ============ РОДИТЕЛЯМ ============ -->
+  <section id="parents" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Родителям</h2>
+        <p class="section-sub">Материалы для поддержки ребёнка в учёбе и школе</p>
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>Переход в 5-й класс</h3>
+        <p class="muted">Материал родительского собрания о социальной адаптации пятиклассников, новых требованиях и поддержке ребёнка в период привыкания к средней школе.</p>
+        <ul class="document-links">
+          <li><a href="materials/parents/grade-5-adaptation-meeting.docx">Материал родительского собрания (DOCX)</a></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Домашняя работа без лишнего напряжения</h3>
+        <p class="muted">Памятка для родителей: как организовать самостоятельную работу, поддержать ребёнка и постепенно приучать его планировать задания.</p>
+        <ul class="document-links">
+          <li><a href="https://alicomsk.ru/sites/alicomsk.ru/files/doc/svedeniya_ob_oo/2025-2026/no/mr_po_sam_rabote_i_dom_zadaniyu_nsh.pdf" target="_blank" rel="noopener noreferrer">Скачать памятку для родителей (PDF)</a></li>
+        </ul>
+        <small class="muted">Источник: АНОО «Академический лицей „Владимир“», рекомендации для начальной школы.</small>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ УЧЕНИКАМ ============ -->
+  <section id="students" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Ученикам</h2>
+        <p class="section-sub">Рабочие листы, задания и материалы для самостоятельной работы</p>
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>История · 6 класс</h3>
+        <p class="muted">Тема «Восточные славяне и их соседи»</p>
+        <ul class="document-links">
+          <li><a href="materials/lessons/history-6-east-slavs/worksheet.docx">Рабочий лист</a></li>
+          <li><a href="materials/lessons/history-6-east-slavs/assignment.docx">Задание по теме</a></li>
+          <li><a href="materials/lessons/history-6-east-slavs/extension-task.docx">Задание повышенной сложности</a></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>История · 7 класс</h3>
+        <p class="muted">Тема «Российское общество XVI века»</p>
+        <ul class="document-links">
+          <li><a href="materials/lessons/history-7-russian-society/worksheet.docx">Рабочий лист</a></li>
+          <li><a href="materials/lessons/history-7-russian-society/handout.docx">Материалы к уроку</a></li>
+          <li><a href="materials/lessons/history-7-russian-society/assessment-sheet.docx">Оценочный лист к уроку</a></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Классные и проектные материалы</h3>
+        <p class="muted">Поговорим о будущем страны и проверим знания в командной игре.</p>
+        <ul class="document-links">
+          <li><a href="materials/students/class-hour-russia.docx">Классный час «Россия, устремлённая в будущее»</a></li>
+          <li><a href="materials/events/victory-roads-quest.docx">Квест-игра «Дорогами Победы»</a></li>
+          <li><a href="https://resh.edu.ru/" target="_blank" rel="noopener noreferrer">Уроки и задания на портале «Российская электронная школа»</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ ПОЛЕЗНЫЕ ССЫЛКИ ============ -->
+  <section id="useful" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Полезные ссылки</h2>
+        <p class="section-sub">Проверенные ресурсы для учеников, родителей и педагогов</p>
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>Безопасность детей</h3>
+        <p class="muted">Правила поведения дома, на улице, у воды и на дороге во время школьных каникул.</p>
+        <ul class="document-links">
+          <li><a href="https://mchs.gov.ru/deyatelnost/bezopasnost-grazhdan/bezopasnost-detey-v-period-kanikul_0" target="_blank" rel="noopener noreferrer">Памятка МЧС России «Безопасность детей в период каникул»</a></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Материалы по ФГОС и методике</h3>
+        <p class="muted">Методические рекомендации, материалы к урокам и документы по учебным предметам.</p>
+        <ul class="document-links">
+          <li><a href="https://edsoo.ru/metodicheskie-dokumenty/" target="_blank" rel="noopener noreferrer">«Единое содержание общего образования» · методические материалы</a></li>
+          <li><a href="https://edsoo.ru/tipovoj-komplekt-metodicheskih-dokum/" target="_blank" rel="noopener noreferrer">Типовой комплект документов, включая рекомендации по домашней работе</a></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Цифровые уроки и библиотека</h3>
+        <p class="muted">Интерактивные задания, готовые уроки и цифровые образовательные материалы.</p>
+        <ul class="document-links">
+          <li><a href="https://learning.edu-sigma.ru/" target="_blank" rel="noopener noreferrer">Цифровая библиотека «Моя школа»</a></li>
+          <li><a href="https://resh.edu.ru/" target="_blank" rel="noopener noreferrer">«Российская электронная школа»</a></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Ресурсы Репинской школы</h3>
+        <p class="muted">Официальные страницы школы для семей, учеников и педагогов.</p>
+        <ul class="document-links">
+          <li><a href="https://repinsk-sosh.gosuslugi.ru/roditelyam-i-uchenikam/" target="_blank" rel="noopener noreferrer">Родителям и ученикам</a></li>
+          <li><a href="https://repinsk-sosh.gosuslugi.ru/roditelyam-i-uchenikam/kanikuly/" target="_blank" rel="noopener noreferrer">Информация на время каникул</a></li>
+          <li><a href="https://repinsk-sosh.gosuslugi.ru/pedagogam-i-sotrudnikam/obrazovatelnye-resursy/" target="_blank" rel="noopener noreferrer">Образовательные ресурсы для педагогов</a></li>
+          <li><a href="https://repinsk-sosh.gosuslugi.ru/roditelyam-i-uchenikam/meropriyatiya/" target="_blank" rel="noopener noreferrer">Мероприятия и школьные события</a></li>
+          <li><a href="https://repinsk-sosh.gosuslugi.ru/roditelyam-i-uchenikam/sektsii-i-kruzhki/volonterskiy-otryad-druzhba/" target="_blank" rel="noopener noreferrer">Волонтёрский отряд «Дружба»</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
   <!-- ============ ВИДЕО ============ -->
   <section id="video" class="reveal">
     <div class="section-head">
@@ -549,6 +670,12 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
         <div class="video"><iframe src="https://vkvideo.ru/video_ext.php?oid=-243547392&amp;id=456239020&amp;hash=6cccf61dbe9f8909&amp;hd=3" title="К истокам подвига — туристический маршрут Репинской школы" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe></div>
         <p class="muted">Туристический маршрут Репинской школы.</p>
         <a href="https://vkvideo.ru/video-243547392_456239020?list=ln-bN6uluKSJa62ox5VlC" target="_blank" rel="noopener noreferrer">Смотреть на VK Видео →</a>
+      </div>
+      <div class="card">
+        <h3>Школьное видео</h3>
+        <div class="video"><iframe src="https://vkvideo.ru/video_ext.php?oid=-243547392&amp;id=456239022&amp;hash=dd897992472a0082&amp;hd=3" title="Дополнительный видеоматериал" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe></div>
+        <p class="muted">Дополнительный видеоматериал о школьной жизни.</p>
+        <a href="https://vkvideo.ru/video-243547392_456239022" target="_blank" rel="noopener noreferrer">Смотреть на VK Видео →</a>
       </div>
     </div>
   </section>
@@ -673,6 +800,38 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
           <h3>Сад Победы</h3>
           <p class="muted">Участие в памятной акции — забота о месте памяти и вклад школьников в сохранение истории.</p>
         </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ АКЦИИ ============ -->
+  <section id="actions" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Акции и школьные дела</h2>
+        <p class="section-sub">Память, добровольчество и общие дела школьного сообщества</p>
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card project-card">
+        <div class="action-art"><span aria-hidden="true">❄</span></div>
+        <div class="project-card-body"><h3>Снежный десант</h3><p class="muted">Школьная добровольческая акция и общее зимнее дело.</p><a href="https://repinsk-sosh.gosuslugi.ru/roditelyam-i-uchenikam/sektsii-i-kruzhki/volonterskiy-otryad-druzhba/" target="_blank" rel="noopener noreferrer">Волонтёрский отряд «Дружба» →</a></div>
+      </article>
+      <article class="card project-card">
+        <div class="action-art ribbon" aria-hidden="true"></div>
+        <div class="project-card-body"><h3>Георгиевская ленточка</h3><p class="muted">Памятная акция ко Дню Победы.</p></div>
+      </article>
+      <article class="card project-card">
+        <img src="photo/gallery-project.jpg" alt="Школьники участвуют в акции «Блокадный хлеб»" loading="lazy">
+        <div class="project-card-body"><h3>Акция «Блокадный хлеб»</h3><p class="muted">Память о жителях блокадного Ленинграда и урок истории через школьную акцию.</p></div>
+      </article>
+      <article class="card project-card">
+        <img src="photo/gallery-garden-of-victory.jpg" alt="Школьники участвуют в акции «Сад Победы»" loading="lazy">
+        <div class="project-card-body"><h3>Сад Победы</h3><p class="muted">Общее дело в память о героях Великой Отечественной войны.</p></div>
+      </article>
+      <article class="card project-card">
+        <img src="photo/gallery-candle-of-memory.jpg" alt="Участие школьного сообщества в акции «Свеча памяти»" loading="lazy">
+        <div class="project-card-body"><h3>Свеча памяти</h3><p class="muted">Участие в памятной акции.</p></div>
       </article>
     </div>
   </section>
