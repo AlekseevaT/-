@@ -9,10 +9,10 @@
 <style>
 /* ---------- ТОКЕНЫ ТЕМ ---------- */
 :root{
-  --bg:#f4f7fb; --bg-2:#eaf0fa; --card:#ffffff; --text:#0f172a; --muted:#475569;
-  --accent:#2563eb; --accent-2:#7c3aed; --accent-soft:#dbeafe; --line:#dbe3ee;
-  --shadow:0 10px 30px rgba(15,23,42,.08); --shadow-lg:0 24px 60px rgba(15,23,42,.16);
-  --radius:18px; --radius-sm:12px;
+  --bg:#f5f7fc; --bg-2:#edf2ff; --card:#ffffff; --text:#111a32; --muted:#53617a;
+  --accent:#315ae8; --accent-2:#8054e7; --accent-soft:#e6edff; --line:#dce4f2;
+  --shadow:0 12px 30px rgba(28,45,88,.075); --shadow-lg:0 20px 46px rgba(35,49,91,.14);
+  --radius:20px; --radius-sm:14px;
 }
 [data-theme="dark"]{
   --bg:#0b1220; --bg-2:#0f1a2e; --card:#111c31; --text:#e6edf7; --muted:#9fb0c7;
@@ -26,14 +26,14 @@ body{
   background:var(--bg); color:var(--text); line-height:1.65; font-size:17px;
   transition: background .35s ease, color .35s ease;
   background-image:
-    radial-gradient(900px 400px at 10% -10%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%),
-    radial-gradient(700px 400px at 100% 0%, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 60%);
+    radial-gradient(850px 420px at 8% -12%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 62%),
+    radial-gradient(760px 460px at 100% 2%, color-mix(in srgb, var(--accent-2) 11%, transparent), transparent 62%);
   background-attachment: fixed;
 }
 a{color:var(--accent); text-decoration:none; transition:color .2s}
 a:hover{text-decoration:underline}
 img{max-width:100%; display:block}
-.wrap{max-width:1180px; margin:0 auto; padding:0 20px}
+.wrap{max-width:1240px; margin:0 auto; padding:0 20px}
 .skip{position:absolute; left:-9999px}
 .skip:focus{left:10px; top:10px; background:var(--card); padding:10px 14px; border-radius:10px; border:2px solid var(--accent); z-index:999}
 
@@ -42,11 +42,11 @@ img{max-width:100%; display:block}
   background:linear-gradient(90deg,var(--accent),var(--accent-2)); transition:width .1s linear}
 
 /* ---------- ШАПКА ---------- */
-header{position:relative; overflow:hidden; padding:56px 0 44px}
+header{position:relative; overflow:hidden; padding:60px 0 48px; border-bottom:1px solid color-mix(in srgb,var(--line) 70%, transparent)}
 header::before{
   content:""; position:absolute; inset:-40% -10% auto -10%; height:120%;
   background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  opacity:.12; filter:blur(60px); transform:rotate(-6deg); z-index:0;
+  opacity:.15; filter:blur(64px); transform:rotate(-6deg); z-index:0;
 }
 .top{position:relative; z-index:1; display:grid; gap:28px; grid-template-columns:auto 1fr auto; align-items:center}
 .avatar{
@@ -67,18 +67,20 @@ h1{font-size:clamp(1.6rem,4vw,2.5rem); line-height:1.15; margin:0 0 8px; letter-
 .theme-btn svg{width:22px; height:22px}
 
 /* ---------- НАВИГАЦИЯ ---------- */
-nav{position:sticky; top:0; z-index:100; background:color-mix(in srgb, var(--card) 85%, transparent); backdrop-filter:blur(14px); border-bottom:1px solid var(--line)}
+nav{position:sticky; top:0; z-index:100; background:color-mix(in srgb, var(--card) 92%, transparent); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); box-shadow:0 5px 18px rgba(28,45,88,.035)}
 nav .wrap{display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; overflow:visible; scrollbar-width:none; padding-top:10px; padding-bottom:10px}
 nav .wrap::-webkit-scrollbar{display:none}
-nav a{padding:8px 14px; border-radius:10px; color:var(--muted); font-size:.92rem; font-weight:600; white-space:nowrap; transition:.2s}
+nav a{padding:9px 14px; border-radius:11px; color:var(--muted); font-size:.92rem; font-weight:650; white-space:nowrap; transition:background .2s,color .2s,transform .2s}
 nav a:hover, nav a.active{background:var(--accent-soft); color:var(--accent); text-decoration:none}
+nav a:hover{transform:translateY(-1px)}
+nav a:focus-visible,.theme-btn:focus-visible,.filter-btn:focus-visible,.gallery button:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 55%, white); outline-offset:2px}
 
 /* ---------- СЕКЦИИ ---------- */
-main{padding:48px 0 64px}
-section{margin-bottom:56px; scroll-margin-top:80px}
+main{padding:54px 0 72px}
+section{margin-bottom:64px; scroll-margin-top:84px}
 .section-head{display:flex; align-items:end; justify-content:space-between; gap:16px; margin-bottom:22px; flex-wrap:wrap}
-h2{font-size:clamp(1.3rem,2.6vw,1.7rem); margin:0; letter-spacing:-.01em; position:relative; padding-left:18px}
-h2::before{content:""; position:absolute; left:0; top:6px; bottom:6px; width:6px; border-radius:6px; background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+h2{font-size:clamp(1.35rem,2.6vw,1.8rem); margin:0; letter-spacing:-.025em; position:relative; padding-left:18px}
+h2::before{content:""; position:absolute; left:0; top:5px; bottom:5px; width:5px; border-radius:6px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); box-shadow:0 2px 8px color-mix(in srgb,var(--accent) 22%, transparent)}
 .section-sub{margin:4px 0 0 18px; color:var(--muted); font-size:.95rem}
 
 /* ---------- КАРТОЧКИ ---------- */
@@ -91,12 +93,12 @@ h2::before{content:""; position:absolute; left:0; top:6px; bottom:6px; width:6px
 .about-tags .tag{margin:0}
 .course-more{margin-top:12px; padding-top:10px; border-top:1px solid var(--line)}
 .course-more summary{color:var(--accent); font-weight:650; cursor:pointer}
-.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); transition:transform .3s, box-shadow .3s; position:relative; overflow:hidden}
+.card{background:linear-gradient(155deg,var(--card),color-mix(in srgb,var(--bg-2) 18%,var(--card)) 125%); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); transition:transform .25s, box-shadow .25s, border-color .25s; position:relative; overflow:hidden}
 .project-card{padding:0}
 .project-card>img{width:100%; aspect-ratio:16/9; object-fit:cover}
 .project-card-body{padding:18px 22px 22px}
-.card::before{content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); opacity:0; transition:opacity .3s}
-.card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
+.card::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); opacity:.34; transition:opacity .25s}
+.card:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:color-mix(in srgb,var(--accent) 25%,var(--line))}
 .card:hover::before{opacity:1}
 .card h3{margin:0 0 10px; font-size:1.08rem}
 .muted{color:var(--muted); font-size:.95rem}
@@ -126,8 +128,8 @@ h2::before{content:""; position:absolute; left:0; top:6px; bottom:6px; width:6px
 
 /* ---------- НОВОСТИ ---------- */
 .news{display:grid; gap:16px}
-.news-item{display:grid; grid-template-columns:88px 1fr; gap:16px; padding:16px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--card); transition:.25s; margin-bottom: 20px;}
-.news-item:hover{box-shadow:var(--shadow)}
+.news-item{display:grid; grid-template-columns:88px 1fr; gap:16px; padding:18px; border:1px solid var(--line); border-left:3px solid color-mix(in srgb,var(--accent) 72%,var(--accent-2)); border-radius:var(--radius-sm); background:linear-gradient(130deg,var(--card),color-mix(in srgb,var(--bg-2) 22%,var(--card)) 130%); box-shadow:var(--shadow); transition:transform .25s,box-shadow .25s; margin-bottom:20px}
+.news-item:hover{transform:translateY(-2px); box-shadow:var(--shadow-lg)}
 .news-date{display:grid; place-items:center; text-align:center; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#fff; border-radius:12px; font-weight:800; line-height:1.1; padding:8px; height: fit-content;}
 .news-date small{font-weight:600; font-size:.7rem; opacity:.9; display:block}
 .news-item h3{margin:0 0 4px; font-size:1.2rem;}
@@ -158,10 +160,10 @@ h2::before{content:""; position:absolute; left:0; top:6px; bottom:6px; width:6px
 
 /* ---------- ГАЛЕРЕЯ ---------- */
 .gallery{display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
-.gallery button{display:block; width:100%; border:0; padding:0; border-radius:14px; overflow:hidden; cursor:pointer; aspect-ratio:4/3; background:linear-gradient(135deg,var(--accent-soft),color-mix(in srgb,var(--accent-2) 20%, transparent)); position:relative; transition:transform .25s}
-.gallery button:hover{transform:scale(1.03)}
+.gallery button{display:block; width:100%; border:0; padding:0; border-radius:16px; overflow:hidden; cursor:pointer; aspect-ratio:4/3; background:linear-gradient(135deg,var(--accent-soft),color-mix(in srgb,var(--accent-2) 20%, transparent)); position:relative; transition:transform .25s,box-shadow .25s}
+.gallery button:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg)}
 .gallery button img{width:100%; height:100%; object-fit:cover}
-.gallery button span{position:absolute; inset:auto 0 0 0; padding:8px 10px; background:linear-gradient(0deg,rgba(0,0,0,.6),transparent); color:#fff; font-size:.82rem; text-align:left}
+.gallery button span{position:absolute; inset:auto 0 0 0; padding:24px 12px 10px; background:linear-gradient(0deg,rgba(9,17,37,.78),transparent); color:#fff; font-size:.86rem; font-weight:650; text-align:left}
 
 /* ---------- ВИДЕО ---------- */
 .video{position:relative; padding-top:56.25%; background:#0b1220; border-radius:14px; overflow:hidden; box-shadow:var(--shadow)}
@@ -180,7 +182,7 @@ h2::before{content:""; position:absolute; left:0; top:6px; bottom:6px; width:6px
 .js-enabled .reveal.in{opacity:1; transform:none}
 
 /* ---------- ФУТЕР ---------- */
-footer{background:linear-gradient(135deg,#0b1220,#111c31); color:#c7d2e3; padding:36px 0; font-size:.92rem}
+footer{background:linear-gradient(125deg,#111a32,#202859 68%,#37316e); color:#e4eaf6; padding:40px 0; font-size:.92rem}
 footer a{color:#93c5fd}
 footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center}
 
