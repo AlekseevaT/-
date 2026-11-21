@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="360" viewBox="0 0 440 360" fill="none">
+  <g stroke="#7183b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".24">
+    <!-- Open book -->
+    <path d="M35 42c14-6 27-4 39 4v39c-12-8-25-10-39-4V42Z"/>
+    <path d="M74 46c12-8 25-10 39-4v39c-14-6-27-4-39 4V46Z"/>
+    <path d="M45 54c7-2 14-1 20 2M45 65c7-2 14-1 20 2M84 56c7-3 14-4 21-2M84 67c7-3 14-4 21-2"/>
+    <!-- Pencil -->
+    <g transform="rotate(32 342 74)">
+      <path d="M327 49h13v55h-13zM327 49l6.5-13 6.5 13M327 96l6.5 10 6.5-10"/>
+      <path d="M327 57h13M327 91h13"/>
+    </g>
+    <!-- Globe -->
+    <circle cx="213" cy="229" r="35"/>
+    <path d="M178 229h70M213 194c10 10 15 21 15 35s-5 25-15 35M213 194c-10 10-15 21-15 35s5 25 15 35M184 208c17 9 41 9 58 0M184 250c17-9 41-9 58 0"/>
+    <path d="m242 255 14 14"/>
+    <!-- Ruler -->
+    <g transform="rotate(-12 87 281)">
+      <rect x="39" y="270" width="96" height="22" rx="4"/>
+      <path d="M51 270v9M63 270v5M75 270v9M87 270v5M99 270v9M111 270v5M123 270v9"/>
+    </g>
+    <!-- Graduation cap -->
+    <path d="m328 257 40-18 40 18-40 18-40-18Z"/>
+    <path d="M342 264v18c15 10 36 10 52 0v-18M408 258v25"/>
+    <circle cx="408" cy="286" r="3"/>
+    <!-- Small star accents -->
+    <path d="M165 62v14M158 69h14M282 316v12M276 322h12"/>
+  </g>
+</svg>
