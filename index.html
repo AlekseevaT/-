@@ -71,7 +71,7 @@ h1{font-size:clamp(1.6rem,4vw,2.5rem); line-height:1.15; margin:0 0 8px; letter-
 
 /* ---------- НАВИГАЦИЯ ---------- */
 nav{position:sticky; top:0; z-index:100; background:color-mix(in srgb, var(--card) 85%, transparent); backdrop-filter:blur(14px); border-bottom:1px solid var(--line)}
-nav .wrap{display:flex; align-items:center; gap:8px; overflow-x:auto; scrollbar-width:none; padding-top:10px; padding-bottom:10px}
+nav .wrap{display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; overflow:visible; scrollbar-width:none; padding-top:10px; padding-bottom:10px}
 nav .wrap::-webkit-scrollbar{display:none}
 nav a{padding:8px 14px; border-radius:10px; color:var(--muted); font-size:.92rem; font-weight:600; white-space:nowrap; transition:.2s}
 nav a:hover, nav a.active{background:var(--accent-soft); color:var(--accent); text-decoration:none}
@@ -156,8 +156,9 @@ h2::before{content:""; position:absolute; left:0; top:6px; bottom:6px; width:6px
 
 /* ---------- ГАЛЕРЕЯ ---------- */
 .gallery{display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
-.gallery button{border:0; padding:0; border-radius:14px; overflow:hidden; cursor:pointer; aspect-ratio:4/3; background:linear-gradient(135deg,var(--accent-soft),color-mix(in srgb,var(--accent-2) 20%, transparent)); position:relative; transition:transform .25s}
+.gallery button{display:block; width:100%; border:0; padding:0; border-radius:14px; overflow:hidden; cursor:pointer; aspect-ratio:4/3; background:linear-gradient(135deg,var(--accent-soft),color-mix(in srgb,var(--accent-2) 20%, transparent)); position:relative; transition:transform .25s}
 .gallery button:hover{transform:scale(1.03)}
+.gallery button img{width:100%; height:100%; object-fit:cover}
 .gallery button span{position:absolute; inset:auto 0 0 0; padding:8px 10px; background:linear-gradient(0deg,rgba(0,0,0,.6),transparent); color:#fff; font-size:.82rem; text-align:left}
 
 /* ---------- ВИДЕО ---------- */
@@ -195,6 +196,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
   .news-item{grid-template-columns:1fr}
   .news-date{width:88px; justify-self: start;}
   .news-gallery {grid-template-columns: repeat(2, 1fr);}
+  nav .wrap{flex-wrap:nowrap; justify-content:flex-start; overflow-x:auto}
 }
 @media (max-width:600px){ 
   body{font-size:16px} 
@@ -607,12 +609,12 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
       </div>
     </div>
     <div class="gallery">
-      <button data-src="https://picsum.photos/seed/1/1200/800"><span>Открытый урок</span></button>
-      <button data-src="https://picsum.photos/seed/2/1200/800"><span>Проектная защита</span></button>
-      <button data-src="https://picsum.photos/seed/3/1200/800"><span>Экскурсия</span></button>
-      <button data-src="https://picsum.photos/seed/4/1200/800"><span>Конкурс чтецов</span></button>
-      <button data-src="https://picsum.photos/seed/5/1200/800"><span>Мастер-класс</span></button>
-      <button data-src="https://picsum.photos/seed/6/1200/800"><span>Родительское собрание</span></button>
+      <button data-src="photo/3.jpg"><img src="photo/3.jpg" alt="Знакомство с музейными материалами" loading="lazy"><span>Школьный музей</span></button>
+      <button data-src="photo/4.jpg"><img src="photo/4.jpg" alt="Мемориальные стенды школьного музея" loading="lazy"><span>Память и история</span></button>
+      <button data-src="photo/5.jpg"><img src="photo/5.jpg" alt="Поездка к памятному месту" loading="lazy"><span>Краеведческая экскурсия</span></button>
+      <button data-src="photo/6.jpg"><img src="photo/6.jpg" alt="Памятник землякам" loading="lazy"><span>История родного края</span></button>
+      <button data-src="news1/15.jpg"><img src="news1/15.jpg" alt="Предмет традиционной культуры на школьной выставке" loading="lazy"><span>Школьная выставка</span></button>
+      <button data-src="news1/16.jpg"><img src="news1/16.jpg" alt="Встреча родителей и педагогов" loading="lazy"><span>Встреча с родителями</span></button>
     </div>
   </section>
 
