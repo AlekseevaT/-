@@ -87,6 +87,9 @@ h2::before{content:""; position:absolute; left:0; top:6px; bottom:6px; width:6px
 /* ---------- КАРТОЧКИ ---------- */
 .grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); transition:transform .3s, box-shadow .3s; position:relative; overflow:hidden}
+.project-card{padding:0}
+.project-card>img{width:100%; aspect-ratio:16/9; object-fit:cover}
+.project-card-body{padding:18px 22px 22px}
 .card::before{content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); opacity:0; transition:opacity .3s}
 .card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
 .card:hover::before{opacity:1}
@@ -595,26 +598,54 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
       </div>
     </div>
     <div class="grid">
-      <div class="card">
-        <h3>Маршрут «К истоку подвига»</h3>
-        <p class="muted">Школьный туристско-краеведческий маршрут для знакомства с историей родного края.</p>
-        <ul class="document-links">
-          <li><a href="materials/routes/route-to-heroism-2025.docx">Описание маршрута, 2025</a></li>
-          <li><a href="materials/routes/route-2026.docx">Материалы маршрута, 2026</a></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Музей Боевой славы имени А. Т. Алтунина</h3>
-        <p class="muted">Школьный музей создан в 1986 году, его работа возобновилась в 2016 году. Среди направлений — история школы и села, материалы о Великой Отечественной войне и земляках.</p>
-      </div>
-      <div class="card">
-        <h3>Исследовательские проекты</h3>
-        <p class="muted">Работы о судьбе труженицы тыла и о Герое Советского Союза А. Т. Алтунине помогают ученикам изучать историю через судьбы людей.</p>
-      </div>
-      <div class="card">
-        <h3>История Репинской школы</h3>
-        <p class="muted">Летопись школы начинается в 1968 году. В Репинке восьмилетняя школа начала работать 1 сентября 1969 года.</p>
-      </div>
+      <article class="card project-card">
+        <img src="photo/5.jpg" alt="Краеведческая экскурсия к памятному месту" loading="lazy">
+        <div class="project-card-body">
+          <h3>Маршрут «К истоку подвига»</h3>
+          <p class="muted">Школьный туристско-краеведческий маршрут знакомит с историей родного края и памятными местами.</p>
+          <ul class="document-links">
+            <li><a href="materials/routes/route-to-heroism-2025.docx">Описание маршрута, 2025</a></li>
+            <li><a href="materials/routes/route-2026.docx">Материалы маршрута, 2026</a></li>
+          </ul>
+          <a href="https://vkvideo.ru/video-243547392_456239020?list=ln-bN6uluKSJa62ox5VlC" target="_blank" rel="noopener noreferrer">Видео «К истокам подвига» →</a>
+        </div>
+      </article>
+      <article class="card project-card">
+        <img src="photo/gallery-museum-visit.jpg" alt="Ученики знакомятся с экспозицией школьного музея" loading="lazy">
+        <div class="project-card-body">
+          <h3>Музей Боевой славы имени А. Т. Алтунина</h3>
+          <p class="muted">Школьный музей создан в 1986 году, его работа возобновилась в 2016 году. Экспозиции рассказывают об истории школы и села, войне и земляках.</p>
+          <a href="https://vkvideo.ru/video-243547392_456239018?list=ln-dZ8tHs3of3zV4otMTV" target="_blank" rel="noopener noreferrer">Смотреть видео о музее →</a>
+        </div>
+      </article>
+      <article class="card project-card">
+        <img src="news1/7.jpg" alt="Встреча со старожилами в Стеклянке" loading="lazy">
+        <div class="project-card-body">
+          <h3>Исследовательские проекты</h3>
+          <p class="muted">Работы о судьбе труженицы тыла и о Герое Советского Союза А. Т. Алтунине помогают изучать историю через судьбы людей и семейные воспоминания.</p>
+        </div>
+      </article>
+      <article class="card project-card">
+        <img src="photo/3.jpg" alt="Знакомство с документами школьного музея" loading="lazy">
+        <div class="project-card-body">
+          <h3>История Репинской школы</h3>
+          <p class="muted">Летопись школы начинается в 1968 году. В Репинке восьмилетняя школа начала работать 1 сентября 1969 года.</p>
+        </div>
+      </article>
+      <article class="card project-card">
+        <img src="photo/gallery-project.jpg" alt="Школьники участвуют в акции «Блокадный хлеб»" loading="lazy">
+        <div class="project-card-body">
+          <h3>Акция «Блокадный хлеб»</h3>
+          <p class="muted">Школьный проект о блокаде Ленинграда помогает сохранить память о мужестве жителей города.</p>
+        </div>
+      </article>
+      <article class="card project-card">
+        <img src="photo/gallery-garden-of-victory.jpg" alt="Участие школьников в акции «Сад Победы»" loading="lazy">
+        <div class="project-card-body">
+          <h3>Сад Победы</h3>
+          <p class="muted">Участие в памятной акции — забота о месте памяти и вклад школьников в сохранение истории.</p>
+        </div>
+      </article>
     </div>
   </section>
 
