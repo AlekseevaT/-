@@ -111,6 +111,17 @@ h2::before{content:""; position:absolute; left:0; top:6px; bottom:6px; width:6px
 .tl-date{font-size:.82rem; font-weight:700; color:var(--accent); letter-spacing:.04em}
 .tl-item h3{margin:2px 0 4px; font-size:1rem}
 
+/* ---------- ГРАМОТЫ И СЕРТИФИКАТЫ ---------- */
+.awards-grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.award-card{display:flex; flex-direction:column; gap:10px; padding:12px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--card); color:var(--text); box-shadow:var(--shadow); transition:transform .2s, box-shadow .2s}
+.award-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg); text-decoration:none}
+.award-card img{width:100%; height:220px; object-fit:contain; border-radius:8px; background:var(--bg-2)}
+.award-card strong{font-size:.95rem; line-height:1.35}
+.award-card span{color:var(--muted); font-size:.85rem}
+.document-links{display:grid; gap:8px; margin:14px 0 0; padding:0; list-style:none}
+.document-links a{display:inline-flex; align-items:baseline; gap:8px}
+.document-links a::before{content:"PDF"; color:var(--accent); font-size:.7rem; font-weight:800; letter-spacing:.04em}
+
 /* ---------- НОВОСТИ ---------- */
 .news{display:grid; gap:16px}
 .news-item{display:grid; grid-template-columns:88px 1fr; gap:16px; padding:16px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--card); transition:.25s; margin-bottom: 20px;}
@@ -231,7 +242,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
     <a href="#news">Новости</a>
     <a href="#method">Методичка</a>
     <a href="#video">Видео</a>
-    <a href="#achievements">Достижения</a>
+    <a href="#achievements">Достижения и грамоты</a>
     <a href="#gallery">Галерея</a>
     <a href="#special">ОВЗ и одарённые</a>
     <a href="#distance">Дистант</a>
@@ -271,10 +282,14 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
       </div>
       <div class="card">
         <h3>Повышение квалификации</h3>
-        <ul class="list">
-          <li>«Современные технологии преподавания иностранного языка», 2025</li>
-          <li>«Актуальные вопросы преподавания истории в условиях ФГОС», 2024</li>
-          <li>«Цифровые образовательные ресурсы в работе учителя», 2026</li>
+        <ul class="document-links">
+          <li><a href="курсы%20переподготовки/Scan1.PDF" target="_blank" rel="noopener">Методологические основы обучения истории в основной школе, 2026</a></li>
+          <li><a href="курсы%20переподготовки/Scan10001.PDF" target="_blank" rel="noopener">История нашего края: Омское Прииртышье, 2025</a></li>
+          <li><a href="курсы%20переподготовки/Scan10002.PDF" target="_blank" rel="noopener">Обновлённый ФГОС: история и обществознание, 2022</a></li>
+          <li><a href="курсы%20переподготовки/Scan10003.PDF" target="_blank" rel="noopener">Коммуникативные навыки при обучении иностранному языку, 2021</a></li>
+          <li><a href="курсы%20переподготовки/Scan10004.PDF" target="_blank" rel="noopener">Цифровая образовательная среда и цифровые компетенции, 2021</a></li>
+          <li><a href="курсы%20переподготовки/Scan10005.PDF" target="_blank" rel="noopener">Организация деятельности педагогического коллектива по ФГОС, 2020</a></li>
+          <li><a href="грамоты/30-3711406621.pdf" target="_blank" rel="noopener">Профилактика неонацизма среди детей и молодёжи, 2025</a></li>
         </ul>
       </div>
     </div>
@@ -494,31 +509,51 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
     </div>
   </section>
 
-  <!-- ============ ДОСТИЖЕНИЯ: ТАЙМЛАЙН ============ -->
+  <!-- ============ ДОСТИЖЕНИЯ И ГРАМОТЫ ============ -->
   <section id="achievements" class="reveal">
     <div class="section-head">
       <div>
-        <h2>Достижения</h2>
-        <p class="section-sub">Профессиональный путь и успехи обучающихся</p>
+        <h2>Достижения и грамоты</h2>
+        <p class="section-sub">Награды и благодарности за педагогическую работу и подготовку учеников</p>
       </div>
     </div>
-    <div class="grid">
-      <div class="card">
-        <h3>Мои достижения</h3>
-        <div class="timeline">
-          <div class="tl-item"><div class="tl-date">2026</div><h3>Публикация в региональном сборнике</h3><p class="muted">Статья «Игровые технологии на уроках иностранного языка».</p></div>
-          <div class="tl-item"><div class="tl-date">2025</div><h3>Призер муниципального этапа «Учитель года»</h3><p class="muted">Представление опыта на региональном уровне.</p></div>
-          <div class="tl-item"><div class="tl-date">2024</div><h3>Грамота Комитета по образованию</h3><p class="muted">За высокие результаты в обучении и воспитании.</p></div>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Достижения обучающихся</h3>
-        <div class="timeline">
-          <div class="tl-item"><div class="tl-date">2026</div><h3>Призёры муниципальной олимпиады</h3><p class="muted">История и английский язык — 2 призёра.</p></div>
-          <div class="tl-item"><div class="tl-date">2025</div><h3>Победители конкурса проектов</h3><p class="muted">«Моя малая родина» (на английском языке).</p></div>
-          <div class="tl-item"><div class="tl-date">2026</div><h3>Участники регионального фестиваля</h3><p class="muted">«Юные таланты».</p></div>
-        </div>
-      </div>
+    <div class="awards-grid">
+      <a class="award-card" href="грамоты/Scan1.PDF" target="_blank" rel="noopener">
+        <img src="грамоты/preview/award-2026.jpg" alt="Почётная грамота Министерства образования Омской области, 2026 год" loading="lazy">
+        <strong>Почётная грамота Министерства образования Омской области</strong><span>За вклад в практическую подготовку обучающихся · 2026</span>
+      </a>
+      <a class="award-card" href="грамоты/Scan10001.PDF" target="_blank" rel="noopener">
+        <img src="грамоты/preview/award-trade-union.jpg" alt="Грамота за первое место в конкурсе страницы профсоюзной организации, 2025 год" loading="lazy">
+        <strong>Первое место в конкурсе страниц профсоюзных организаций</strong><span>Комитет по образованию Калачинского района · 2025</span>
+      </a>
+      <a class="award-card" href="грамоты/Scan10005.PDF" target="_blank" rel="noopener">
+        <img src="грамоты/preview/award-2021.jpg" alt="Почётная грамота Комитета по образованию, 2021 год" loading="lazy">
+        <strong>Почётная грамота Комитета по образованию</strong><span>За подготовку обучающихся и развитие их творческой активности · 2021</span>
+      </a>
+      <a class="award-card" href="грамоты/Scan10006.PDF" target="_blank" rel="noopener">
+        <img src="грамоты/preview/award-pobeda.jpg" alt="Благодарственное письмо Министерства образования Омской области за подготовку команды к игре Победа" loading="lazy">
+        <strong>Благодарность Министерства образования Омской области</strong><span>За подготовку команды к региональному этапу игры «Победа» · 2021</span>
+      </a>
+      <a class="award-card" href="грамоты/Scan10007.PDF" target="_blank" rel="noopener">
+        <img src="грамоты/preview/award-2022.jpg" alt="Благодарственное письмо за труд и вклад в воспитание детей, 2022 год" loading="lazy">
+        <strong>Благодарственное письмо за труд и вклад в воспитание</strong><span>Министерство просвещения Российской Федерации · 2022</span>
+      </a>
+      <a class="award-card" href="грамоты/Scan10009.PDF" target="_blank" rel="noopener">
+        <img src="грамоты/preview/award-history-game.jpg" alt="Благодарственное письмо за подготовку команды к игре Знатоки краеведения, 2021 год" loading="lazy">
+        <strong>Благодарность за подготовку команды к игре «Знатоки краеведения»</strong><span>Омский государственный историко-краеведческий музей · 2021</span>
+      </a>
+      <a class="award-card" href="грамоты/Scan10010.PDF" target="_blank" rel="noopener">
+        <img src="грамоты/preview/award-class-teacher.jpg" alt="Диплом муниципального конкурса Самый классный классный, номинация Сердце отдаю детям, 2022 год" loading="lazy">
+        <strong>Призёр конкурса «Самый классный классный»</strong><span>Номинация «Сердце отдаю детям» · 2022</span>
+      </a>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <h3>Другие благодарности</h3>
+      <ul class="document-links">
+        <li><a href="грамоты/Scan10002.PDF" target="_blank" rel="noopener">За участие в лыжном пробеге «Марш-бросок», 2023</a></li>
+        <li><a href="грамоты/Scan10003.PDF" target="_blank" rel="noopener">За подготовку команды к игре-викторине по истории отечественных спецслужб, 2023</a></li>
+        <li><a href="грамоты/Scan10004.PDF" target="_blank" rel="noopener">За участие в тематическом кинопоказе ко Дню народного единства, 2024</a></li>
+      </ul>
     </div>
   </section>
 
