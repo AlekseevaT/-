@@ -132,8 +132,8 @@ h2::before{content:""; position:absolute; left:0; top:5px; bottom:5px; width:5px
 .news{display:grid; gap:16px}
 .news-item{display:grid; grid-template-columns:88px 1fr; gap:16px; padding:18px; border:1px solid var(--line); border-left:3px solid color-mix(in srgb,var(--accent) 72%,var(--accent-2)); border-radius:var(--radius-sm); background:linear-gradient(130deg,var(--card),color-mix(in srgb,var(--bg-2) 22%,var(--card)) 130%); box-shadow:var(--shadow); transition:transform .25s,box-shadow .25s; margin-bottom:20px}
 .news-item:hover{transform:translateY(-2px); box-shadow:var(--shadow-lg)}
-.news-date{display:grid; place-items:center; text-align:center; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#fff; border-radius:12px; font-weight:800; line-height:1.1; padding:8px; height: fit-content;}
-.news-date small{font-weight:600; font-size:.7rem; opacity:.9; display:block}
+.news-marker{display:grid; place-items:center; gap:3px; text-align:center; background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 92%,#fff),color-mix(in srgb,var(--accent-2) 88%,#fff)); color:#fff; border:1px solid color-mix(in srgb,var(--accent) 20%,transparent); border-radius:14px; font-size:1.35rem; line-height:1; padding:9px 7px; min-width:64px; min-height:64px; height:fit-content; box-shadow:0 6px 16px color-mix(in srgb,var(--accent) 18%,transparent)}
+.news-marker small{font-weight:700; font-size:.62rem; line-height:1.1; opacity:.95; display:block}
 .news-item h3{margin:0 0 4px; font-size:1.2rem;}
 .news-text p {margin-top: 0; margin-bottom: 12px; font-size: 0.95rem; text-align: justify;}
 
@@ -200,7 +200,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
   .top .theme-btn{grid-column:2; justify-self:start}
   h1{overflow-wrap:anywhere}
   .news-item{grid-template-columns:1fr}
-  .news-date{width:88px; justify-self: start;}
+  .news-marker{width:88px; justify-self: start;}
   .news-gallery {grid-template-columns: repeat(2, 1fr);}
   nav .wrap{flex-wrap:nowrap; justify-content:flex-start; overflow-x:auto; scroll-snap-type:x proximity; padding-left:16px; padding-right:16px}
   nav a{scroll-snap-align:start; padding:10px 12px}
@@ -359,7 +359,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
       <!-- СТАТЬЯ: ГОЛОСА ИСТОРИИ (20 ноября) -->
       <article class="news-item" style="grid-template-columns: 1fr;">
         <div style="display:flex; gap: 16px; align-items: start; margin-bottom: 12px;">
-            <div class="news-date">20<small>ноя 2026</small></div>
+            <div class="news-marker" aria-label="Краеведческое исследование">🏛️<small>История</small></div>
             <div>
                 <h3>«Голоса истории»</h3>
                 <span class="tag">Музей</span><span class="tag">Исследование</span>
@@ -383,7 +383,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
       <!-- СТАТЬЯ: МОСТ ДРУЖБЫ (19 ноября) -->
       <article class="news-item" style="grid-template-columns: 1fr;">
         <div style="display:flex; gap: 16px; align-items: start; margin-bottom: 12px;">
-            <div class="news-date">19<small>ноя 2026</small></div>
+            <div class="news-marker" aria-label="Встреча школьных музеев">🤝<small>Встреча</small></div>
             <div>
                 <h3>Мост дружбы: как школы объединяют историю и память</h3>
                 <span class="tag">Музей</span><span class="tag">Патриотика</span>
@@ -412,7 +412,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
       <!-- СТАТЬЯ: ХРАНИТЕЛИ ИСТОРИИ В ГОСТЯХ У ТРАДИЦИЙ (18 ноября) -->
       <article class="news-item" style="grid-template-columns: 1fr;">
         <div style="display:flex; gap: 16px; align-items: start; margin-bottom: 12px;">
-            <div class="news-date">18<small>ноя 2026</small></div>
+            <div class="news-marker" aria-label="Знакомство с традициями">🌿<small>Традиции</small></div>
             <div>
                 <h3>Хранители истории в гостях у традиций: активисты школьного музея побывали в чешской деревне Новоградка</h3>
                 <span class="tag">Краеведение</span><span class="tag">Музей</span>
@@ -441,7 +441,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
       <!-- СТАТЬЯ: ЮБИЛЕЙ ПЕДАГОГА (16 ноября) -->
       <article class="news-item" style="grid-template-columns: 1fr;">
         <div style="display:flex; gap: 16px; align-items: start; margin-bottom: 12px;">
-            <div class="news-date">16<small>ноя 2026</small></div>
+            <div class="news-marker" aria-label="Поздравление педагога">🌷<small>Благодарность</small></div>
             <div>
                 <h3>Юбилей педагога с большим сердцем: 80 лет — не рубеж, а повод сказать „спасибо“</h3>
                 <span class="tag">Юбилей</span><span class="tag">Ветераны</span>
@@ -466,27 +466,27 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-betwe
           
       
           <article class="news-item" style="grid-template-columns: 1fr;">
-        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-date">27<small>янв 2021</small></div><div><h3>Всероссийский урок памяти «Блокадный хлеб»</h3><span class="tag">Память</span><span class="tag">Урок</span></div></div>
+        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-marker" aria-label="Урок памяти">🕯️<small>Память</small></div><div><h3>Всероссийский урок памяти «Блокадный хлеб»</h3><span class="tag">Память</span><span class="tag">Урок</span></div></div>
         <div class="news-content"><div class="news-text"><p>27 января в школе прошёл урок памяти о блокаде Ленинграда. Ученики говорили о стойкости жителей и защитников города.</p><p>Символом урока стал кусочек хлеба весом 125 граммов — минимальная норма выдачи зимой 1941/1942 года.</p></div><div class="news-single-img"><img src="photo/archive-highlights/blockade-bread-2021.jpg" alt="Символическая порция хлеба и материалы к годовщине блокады Ленинграда" loading="lazy" onclick="openModal('photo/archive-highlights/blockade-bread-2021.jpg')"></div></div>
       </article>
       <article class="news-item" style="grid-template-columns: 1fr;">
-        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-date">3<small>дек 2020</small></div><div><h3>День Неизвестного солдата: цветы у мемориала</h3><span class="tag">Память</span><span class="tag">Юнармия</span></div></div>
+        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-marker" aria-label="Памятная акция">🕊️<small>Память</small></div><div><h3>День Неизвестного солдата: цветы у мемориала</h3><span class="tag">Память</span><span class="tag">Юнармия</span></div></div>
         <div class="news-content"><div class="news-text"><p>В День Неизвестного солдата школьники и юнармейцы пришли к мемориалу, возложили цветы и почтили память защитников Отечества, чьи имена остались неизвестны.</p></div><div class="news-single-img"><img src="photo/archive-highlights/memorial-flowers-2020.jpg" alt="Школьники возлагают цветы к мемориалу в День Неизвестного солдата" loading="lazy" onclick="openModal('photo/archive-highlights/memorial-flowers-2020.jpg')"></div></div>
       </article>
       <article class="news-item" style="grid-template-columns: 1fr;">
-        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-date">3<small>дек 2020</small></div><div><h3>Акция «Письма Победы»</h3><span class="tag">Память</span><span class="tag">Творчество</span></div></div>
+        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-marker" aria-label="Письма памяти">✉️<small>Письма</small></div><div><h3>Акция «Письма Победы»</h3><span class="tag">Память</span><span class="tag">Творчество</span></div></div>
         <div class="news-content"><div class="news-text"><p>К памятной дате школьники подготовили письма неизвестному солдату и тематические открытки. В архивной презентации собраны работы учеников разных классов.</p><p>Письма и открытки стали личным творческим откликом ребят и частью школьной работы по сохранению исторической памяти.</p></div><div class="news-single-img"><img src="photo/archive-highlights/victory-letter-craft.jpg" alt="Открытка, созданная школьниками для акции «Письма Победы»" loading="lazy" onclick="openModal('photo/archive-highlights/victory-letter-craft.jpg')"></div></div>
       </article>
       <article class="news-item" style="grid-template-columns: 1fr;">
-        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-date">9<small>мая 2020</small></div><div><h3>«Бессмертный полк в моей семье»</h3><span class="tag">Память</span><span class="tag">Юнармия</span></div></div>
+        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-marker" aria-label="Семейная память">⭐<small>Семья</small></div><div><h3>«Бессмертный полк в моей семье»</h3><span class="tag">Память</span><span class="tag">Юнармия</span></div></div>
         <div class="news-content"><div class="news-text"><p>К 75-летию Победы юнармейский отряд «Наследники Алтунина» пригласил жителей села поделиться фотографиями и сведениями о родственниках, воевавших в годы Великой Отечественной войны.</p><p>Школа помогала оформить портреты для шествия «Бессмертный полк» 9 Мая. Оригиналы фотографий возвращали владельцам после оформления.</p></div><div class="news-single-img"><img src="photo/archive-highlights/immortal-procession-2020.jpg" alt="Шествие «Бессмертный полк»" loading="lazy" onclick="openModal('photo/archive-highlights/immortal-procession-2020.jpg')"></div></div>
       </article>
       <article class="news-item" style="grid-template-columns: 1fr;">
-        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-date">4–8<small>мая 2020</small></div><div><h3>Акция «Окна Победы»</h3><span class="tag">Память</span><span class="tag">Школьная жизнь</span></div></div>
+        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-marker" aria-label="Памятная школьная акция">🎗️<small>Акция</small></div><div><h3>Акция «Окна Победы»</h3><span class="tag">Память</span><span class="tag">Школьная жизнь</span></div></div>
         <div class="news-content"><div class="news-text"><p>В преддверии 75-летия Победы ученики украсили окна школы рисунками и символами памяти. Так школьное здание присоединилось к праздничному оформлению села.</p></div><div class="news-single-img"><img src="photo/archive-highlights/victory-windows-2020.jpg" alt="Школа с оформленными к 75-летию Победы окнами" loading="lazy" onclick="openModal('photo/archive-highlights/victory-windows-2020.jpg')"></div></div>
       </article>
       <article class="news-item" style="grid-template-columns: 1fr;">
-        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-date">20<small>янв – 5 фев 2020</small></div><div><h3>Акция «Армейский чемоданчик»</h3><span class="tag">Юнармия</span><span class="tag">Семейная история</span></div></div>
+        <div style="display:flex; gap:16px; align-items:start; margin-bottom:12px;"><div class="news-marker" aria-label="Семейная история">🎒<small>История</small></div><div><h3>Акция «Армейский чемоданчик»</h3><span class="tag">Юнармия</span><span class="tag">Семейная история</span></div></div>
         <div class="news-content"><div class="news-text"><p>Школа пригласила жителей села поделиться семейными реликвиями, связанными со срочной или профессиональной службой родных: альбомами, документами, газетными вырезками и предметами быта.</p><p>Экспонаты рассказывали о людях и семейной памяти; после акции все вещи возвращались владельцам.</p></div><div class="news-single-img"><img src="photo/archive-highlights/army-suitcase-exhibit.jpg" alt="Школьники рассматривают семейные реликвии и предметы военной службы на выставке" loading="lazy" onclick="openModal('photo/archive-highlights/army-suitcase-exhibit.jpg')"></div></div>
       </article>
     </div>
